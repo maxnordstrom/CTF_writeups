@@ -1,19 +1,16 @@
 # Storage of Ancient Egyptian Artifacts (IDOR, 100p)
-> Max Nordström
-
-## 👋 Introduction
 
 Hi and welcome to my first ever CTF write-up! 
 
 I'm fairly new to the CTF concept, even though I did some CTFs around ten years ago when I studied a couple of university courses in IT security and forensics.
 
-This challenge, called **Storage of Ancient Egyptian Artifacts**, focuses on the concept of **IDOR (Insecure Direct Object Reference)**. It's part of the **Outpost24 CTF 2025**, and even if the competition is past overdue, the challenges were still open to the public. I tackled it solo, although I did prompt ChatGPT a few times – first to understand what IDOR is all about, and later for brainstorming when I felt stuck.
+This challenge was part of the **Outpost24 CTF 2025**, and even if the competition is way past deadline, the challenges were still open to the public so I had a go. I tackled it solo, although I did prompt ChatGPT a few times – first to understand what IDOR was all about, and later for brainstorming when I felt stuck.
 
 Happy reading! 🎉
 
-## 🏁 Challenge Overview
+## 🏁 Introduction and Challenge Overview
 
-From the landing page, I gathered that this challenge involved some kind of artifact collection with **restricted access** to certain items. Oh, did someone say *restricted*? 😏
+The challenge, **Storage of Ancient Egyptian Artifacts**, focuses on the concept of **IDOR (Insecure Direct Object Reference)** and I got to know that **Burp Suite** or equivalent was needed. From the landing page, I gathered that this challenge involved some kind of artifact collection with **restricted access** to certain items. Oh, did someone say *restricted*? 😏
 
 ![Landing page](images/landing_page.png)
 
@@ -46,7 +43,7 @@ I logged out and revisited the login page and had a look in dev tools. I almost 
 
 ![Explorer](images/hidden_field.png)
 
-Since this is my fist time tinkering around with IDOR, I prompted ChatGPT on how I could use this information. The hidden field had a **value variable** with no value. Since *Explorer* had clearance level 1, I tried bumping the value to `2`, then I logged in again using the same credentials as before. This time, I was welcomed as **Curator**. Fancy fancy 🙂
+Since this is my fist time tinkering around with IDOR, I prompted ChatGPT on how I could use this information. The hidden field had a **value variable** with no value. Since *Explorer* had clearance level 1, I tried setting the value to `2`, then I logged in again using the same credentials as before. This time, I was welcomed as **Curator**. Fancy fancy 🙂
 
 On the profile page, I now saw:
 
@@ -54,7 +51,7 @@ On the profile page, I now saw:
 - **Role:** Staff
 - **Clearance level:** 2  
 
-It also told me I had *access to staff-only artifacts and research notes*. But nothing new appeared in the gallery. Sure, I had a higher clearance level. But I had a hunch: there must be a more privileged user...
+It also told me I had *access to staff-only artifacts and research notes*. But nothing new appeared in the gallery. Sure, I had a higher clearance level, but I had a hunch: there must be a more privileged user...
 
 ## 👑 King of the Castle. Or Pyramid?
 
