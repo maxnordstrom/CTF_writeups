@@ -43,7 +43,14 @@ I logged out and revisited the login page and had a look in dev tools. I almost 
 
 ![Explorer](images/hidden_field.png)
 
-Since this is my fist time tinkering around with IDOR, I prompted ChatGPT on how I could use this information. The hidden field had a **value variable** with no value. Since *Explorer* had clearance level 1, I tried setting the value to `2`, then I logged in again using the same credentials as before. This time, I was welcomed as **Curator**. Fancy fancy 🙂
+Since this is my fist time tinkering around with IDOR, I prompted ChatGPT on how I could use this information. Having a closer look in the source code I saw that the hidden field had a `value` attribute set to an empty string. 
+
+```html
+<!-- Hidden field for the IDOR vulnerability -->
+<input type="hidden" id="user_id" name="user_id" value="">
+```
+
+Since *Explorer* had clearance level 1, I tried setting the value to `2`, then I logged in again using the same credentials as before. This time, I was welcomed as **Curator**. Fancy fancy 🙂
 
 On the profile page, I now saw:
 
@@ -71,11 +78,11 @@ Hm, artifact ID... 🤔
 
 ## 🔎 Artifact IDs in the URL
 
-Aha! I remembered that each artifact had an **ID in the bottom right corner** – which also appeared in the **URL** when viewing it.
+Aha! I remembered that each artifact had an **ID in the bottom right corner**, which also appeared as part of the **URL** when viewing it: `../artifact/c4ca4238a0b923820dcc509a6f75849b`
 
 ![Security note](images/artifact_id.png)
 
-My go-to move: use the artifact ID shown in the admin profile to manually access a hidden page.
+My go-to move: use the artifact ID found on the admin profile page in the URL. Thus trying to manually access a hidden page: `../artifact/a7f39e1cb8d542b6c9184b8374fe36a1`
 
 Boom. It worked. I found **The Mask of Osiris** and **the flag**.
 
