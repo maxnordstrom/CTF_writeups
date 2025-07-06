@@ -102,7 +102,7 @@ Until now, the journey had been pretty straighforward:
 ✔️ Located an admin-only artifact  
 ✔️ Retrieved the flag. Well, half of it.
 
-But where’s the first half? If the CTF challenge was about IDOR, where could the first part of the flag be? Somewhere else when logged in as Director? Or maybe somewhere at clearance level 2?
+But where's the first half? If the CTF challenge was about IDOR, where could the first part of the flag be? Somewhere else when logged in as Director? Or maybe somewhere at clearance level 2?
 
 ## 🕯️ Following the Clue: "Hidden Papyrus Fragment"
 
