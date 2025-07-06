@@ -8,4 +8,4 @@ The last stage of the room had three challenges set up (well, actually four) and
 
 ## Table of Contents
 
-- [Challenge #2](#)
+- [Challenge #2](./challenge_2/)
