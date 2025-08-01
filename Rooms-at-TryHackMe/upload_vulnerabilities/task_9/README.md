@@ -2,7 +2,7 @@
 ### Bypassing Server-Side Filtering: Magic Numbers
 #### *2025-07-29*
 
-> ⚠️ This writeup contains spoilers for the room *Upload Vulnerabilities* on Try Hack Me. I highly recommend trying the room yourself before reading further! You can find it at [https://tryhackme.com/rooms/uploadvulns](https://tryhackme.com/rooms/uploadvulns)
+> ⚠️ This writeup contains spoilers for the room *Upload Vulnerabilities* on Try Hack Me. Want to try it out before you continue reading? You can find it at [https://tryhackme.com/rooms/uploadvulns](https://tryhackme.com/rooms/uploadvulns)
 
 ## 📋 Introduction
 
