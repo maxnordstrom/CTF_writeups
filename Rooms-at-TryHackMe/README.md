@@ -4,5 +4,5 @@ A collection of writeups on rooms at [tryhackme.com](https://tryhackme.com). I t
 
 ## Table of Contents
 
-- [Room: File Inclusion](./file_inclusion/)
-- [Room: Upload Vulnerabilities](./upload_vulnerabilities/)
+- [Room: Upload Vulnerabilities](./upload_vulnerabilities/) (2025-07-29)
+- [Room: File Inclusion](./file_inclusion/) (2025-07-07)
