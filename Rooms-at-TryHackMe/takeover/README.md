@@ -66,7 +66,7 @@ I headed over to my browser, went to `support.futurevera.thm` and clicked my way
 
 Scolling down I saw the heading **Subject Alt Names** with the fantastic DNS name of `secrethelpdesk934752.support.futurevera.thm`. No wonder my wordlists didn't catch that one 😅
 
-I added it to my hosts file and checked it out in my browser. At first I got a bit worried/shocked/anxious because the first thing I read was **Hmm. We're having trouble...** But I continued to read and found the flag. Finally 🙂
+I added it to my hosts file and checked it out in my browser. At first I got a bit worried/shocked/anxious because the first thing I read was **Hmm. We're having trouble...** But I continued to read and found the flag. Finally 🚩
 
 ![Hmm.](img/HMM.png)
 
@@ -76,10 +76,10 @@ This "easy" task learned me a lot about subdomain (and directory) enumeration. E
 
 I'm a bit disappointed that the task instruction said that the flag was going to be pretty straight forward to find - it really wasn't for me. But I guess checking the certificates **is** a straight forward move in the world of CTFs, so that's something I've learned for the future. In summary:
 
-- Grit is always rewarded.
-- A helpful hint can be super useful.
-- Improved my Gobuster and Ffuf skills.
-- Remember to think outside the box.
-- Approx time to finish? Don't even ask 😅
+📌 Grit is always rewarded in the end.  
+📌 A helpful hint can be super useful.  
+📌 Improved my Gobuster and Ffuf skills.  
+📌 Remember to think outside the box.  
+📌 Approx time to finish? Don't even ask 😅
 
 Thanks for reading and happy hacking ✨
