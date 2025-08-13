@@ -35,7 +35,7 @@ I got a bunch of **Status 400** that didn't make any sense really. I wanted some
 
 Not very helpful either. The good thing is that you can filter out the results in several ways, with `-fs` in particular you can filter by size and that was what I did. It seemd like `4605` was my baseline, so I filtered that out and got two solid hits: `support` and `blog`.
 
-![FFUF 2 HITS](/img/FFUF2HITS.png)
+![FFUF 2 HITS](img/FFUF2HITS.png)
 
 I added `support.futurevera.thm` and `blog.futurevera.thm` to my hosts file and went to have a look. The support site was a one-pager saying that they were re-building the support website. The blog had a couple of pages, but there was no obvious flag. 
 
