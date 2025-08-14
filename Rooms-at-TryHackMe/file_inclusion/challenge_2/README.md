@@ -1,6 +1,6 @@
 # File Inclusion Challenge #2
 
-> ⚠️ This writeup contains spoilers for the room *File Inclusion* on Try Hack Me. I highly recommend trying the room yourself before reading further! You can find it at [https://tryhackme.com/rooms/fileinc](https://tryhackme.com/rooms/fileinc)
+> ⚠️ This writeup contains spoilers for the room *File Inclusion* on Try Hack Me. I highly recommend trying the room yourself before reading further! You can find it at [https://tryhackme.com/room/fileinc](https://tryhackme.com/rooms/fileinc)
 
 ## 📋 Introduction
 
