@@ -2,6 +2,8 @@
 
 > ⚠️ Spoiler warning! Do you want to try out the room yourself before you read further? You'll find it at [https://tryhackme.com/room/takeover](https://tryhackme.com/room/takeover)
 
+#### *2025-08-13*
+
 ![Header](img/HEADER.png)
 
 ## 📋 Introduction
