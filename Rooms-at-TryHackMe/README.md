@@ -1,6 +1,9 @@
-# Rooms @ Try Hack Me
+# Rooms @ TryHackMe
 
-A collection of writeups on rooms at [tryhackme.com](https://tryhackme.com). I try to clear as many rooms as possible and I do writeups on a few selected ones I think are extra interesting.
+![maxnordtrom's TryHackMe badge](https://tryhackme-badges.s3.amazonaws.com/maxnordstrom.png)  
+*Badge generated 2025-08-26*
+
+A collection of writeups on rooms at TryHackMe. I try to clear as many rooms as possible and I do writeups on a few selected ones I think are extra interesting. Check out my profile at [https://tryhackme.com/maxnordstrom](https://tryhackme.com/maxnordstrom).
 
 ## Table of Contents
 
