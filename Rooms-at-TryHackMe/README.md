@@ -1,9 +1,9 @@
 # Rooms @ TryHackMe
 
-![maxnordtrom's TryHackMe badge](https://tryhackme-badges.s3.amazonaws.com/maxnordstrom.png)  
+<a href="https://tryhackme-badges.s3.amazonaws.com/maxnordstrom.png"><img src="https://tryhackme-badges.s3.amazonaws.com/maxnordstrom.png"></a>  
 *Badge generated 2025-09-10*
 
-A collection of writeups on rooms at TryHackMe. I try to clear as many rooms as possible and I do writeups on a few selected ones I think are extra interesting. Check out my profile at [https://tryhackme.com/maxnordstrom](https://tryhackme.com/maxnordstrom).
+A collection of writeups on rooms at TryHackMe. I try to clear as many rooms as possible and I do writeups on a few selected ones I think are extra interesting. Check out my profile [here](https://tryhackme.com/p/maxnordstrom).
 
 ## Table of Contents
 
