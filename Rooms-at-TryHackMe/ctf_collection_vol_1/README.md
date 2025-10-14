@@ -79,7 +79,7 @@ S1: 44585d6b2368737c65252166234f20626d
 S2: 1010101010101010101010101010101010
 ```
 
-`S1` is a hex string and `S2` is binary. We guessed we should XOR them in some way. In CyberChef we entered the first string, converted from hex, then ran XOR using the second string as the key. That produced the flag
+`S1` is a hex string and `S2` is binary. We guessed we should XOR them in some way. In CyberChef we entered the first string, converted from hex, then ran XOR using the second string as the key. That produced the flag.
 
 ## Task 15 - Binary walk
 
