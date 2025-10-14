@@ -1,6 +1,6 @@
 # Rooms @ TryHackMe
 
-<a href="https://tryhackme.com/p/maxnordstrom"><img src="https://tryhackme-badges.s3.amazonaws.com/maxnordstrom.png"></a>  
+<a href="https://tryhackme.com/p/maxnordstrom"><img src="img/maxnordstrom.png"></a>  
 *Badge generated 2025-10-14*
 
 A collection of writeups on rooms at TryHackMe. I try to clear as many rooms as possible and I do writeups on a few selected ones I think are extra interesting. Check out my profile [here](https://tryhackme.com/p/maxnordstrom).
