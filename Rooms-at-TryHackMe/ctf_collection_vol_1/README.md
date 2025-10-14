@@ -74,7 +74,7 @@ After pasting the string and running the program on geocachingtoolbox we got the
 
 We were presented with the strings
 
-```python
+```
 S1: 44585d6b2368737c65252166234f20626d
 S2: 1010101010101010101010101010101010
 ```
