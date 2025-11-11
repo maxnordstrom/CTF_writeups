@@ -4,33 +4,37 @@ https://tryhackme.com/room/teamcw
 
 ![Screenshot](img/Pasted%20image%2020251110121657.png)
 
+## Introduction
+
+A "simple" boot2root challenge. I tackled the task with [onind00](https://tryhackme.com/p/onind00) and [HENZU](https://tryhackme.com/p/HENZU) - thanks for the team spirit and great insights!
+
 ## Initial Recon
 
-Vi började med att köra nmap, visade sig att port 21 (ftp), 22 (ssh) och 80 (http) är öppna.
+We started by running nmap, which showed that port 21 (ftp), 22 (ssh) and 80 (http) are open.
 
 ![Screenshot](img/Pasted%20image%2020251110121817.png)
 
-Jag gick därefter ut på hemsidan för att se vad jag kunde hitta, `http://10.10.5.55`. Dock kom vi bara till template-sidan för Apache2 Ubuntu:
+I then went to the website to see what I could find, `http://10.10.5.55`. However, we only reached the template page for Apache2 Ubuntu:
 
 ![Screenshot](img/Pasted%20image%2020251110122514.png)
 
-Ett par körningar med **Gobuster** och typ **ffuf** gav inget mer än en 403 på `/server-status` vilket är standard.
+A couple of runs with **Gobuster** and **ffuf** gave nothing more than a 403 on `/server-status` which is standard.
 
 ## Digging Deeper
 
-Vid en närmare titt så stod det i hemsidans title-element "If it works, add **team.thm** to your hosts file". Jag tänkte först att det inte skulle ge oss något mer, utan endast vara ett sätt för oss att gå till just *team.thm* istället för att uppge hela IP-adressen. Men när jag lade till IP och namn i `/etc/hosts` och gick till `http://team.thm` så märkte jag direkt att jag kom till en fin hemsida.
+Upon closer inspection, the website's title element said "If it works, add **team.thm** to your hosts file". I first thought it wouldn't give us anything more, but would only be a way for us to go to *team.thm* instead of providing the entire IP address. But when I added the IP and name to `/etc/hosts` and went to `http://team.thm`, I immediately noticed that I reached a nice website.
 
-Dags att sätta igång **Gobuster** igen och även kolla närmare på hemsidans kod.
+Time to start **Gobuster** again and also look more closely at the website's code.
 
-Min kompis gjorde en körning med **feroxbuster** och fick en hel del intressanta träffar, bland annat `/scripts/script.txt` och `/scripts/script.old`
+My friend did a run with **feroxbuster** and got a lot of interesting hits, including `/scripts/script.txt` and `/scripts/script.old`
 
 ![Screenshot](img/Pasted%20image%2020251110131816.png)
 
-I `script.old` hittade vi användaruppgifter för FTP, närmare bestämt en stor base64-encoded blob, men när den decode:ades kunde vi läsa ut `ftpuser:T3@m$h@r3`
+In `script.old` we found credentials for FTP, more specifically a large base64-encoded blob, but when it was decoded we could read `ftpuser:T3@m$h@r3`
 
 ## FTP
 
-När vi loggade in via FTP kunde vi hitta en textfil i `/workshare/New_site.txt` som avslöjade att någon utvecklar en sida för teamet:
+When we logged in via FTP we could find a text file in `/workshare/New_site.txt` that revealed that someone is developing a page for the team:
 
 ```
 Dale
@@ -42,27 +46,27 @@ Gyles
 ```
 ## Let's add a Subdomain
 
-Vi lade till `dev.team.thm` i hosts-filen och tog oss en närmare titt. Det är verkligen en work-in-progress, men det verkar vara början på nån slags **team share/shared folder**.
+We added `dev.team.thm` to the hosts file and took a closer look. It really is a work-in-progress, but it appears to be the beginning of some kind of **team share** or **shared folder**.
 
 ![Screenshot](img/Pasted%20image%2020251110131432.png)
 
 ![Screenshot](img/Pasted%20image%2020251110134713.png)
 
-Inte mycket för världen just nu, men kan det vara så att vi kan ladda upp saker till denna share för att sedan utnyttja någon slags sårbarhet? Kanske kunna ladda upp ett webshell?
+Not much to the world right now, but could it be that we can upload things to this share to then exploit some kind of vulnerability? Maybe upload a webshell?
 
-## Läsa filer i webbläsaren
+## Reading files in the browser
 
-Inget webshell, men vi kunde kanske utnyttja att vi fick en "parameter-grej-i-webbläsaren". Alltså utnyttja Remote/Local File Inclusion - att läsa filer från servern direkt i webbläsaren. Min kompis testade att se om det funkade, och javisst. Vi kunde läsa `/ect/passwd`, men även `/etc/ssh/sshd_config`
+No webshell, but we got a "parameter-thing-in-the-browser". Could we exploit some kind of Remote/Local File Inclusion - reading files from the server directly in the browser? My friend tested to see if it worked, and indeed. We could read `/ect/passwd`, but also `/etc/ssh/sshd_config`
 
 ![Screenshot](img/Pasted%20image%2020251110152938.png)
 
-Det var inte helt enkelt att tyda, men längst ner kunde vi se den privata nyckeln för användaren `Dale` som inleds i slutet av screenshoten ovan. Detta är ingen vanlig placering av privata nycklar, men av någon anledning så hade just detta företaget det som policy... Synd för dem, bra för oss! Nyckeln behövde dock redigeras lite innan jag kunde använda den.
+It wasn't entirely easy to interpret, but at the bottom we could see the private key for the user `Dale` which begins at the end of the screenshot above. This is not a normal location for private keys, but for some reason this particular company had it as policy... Bad for them, good for us! However, the key needed to be edited a bit before I could use it.
 
-När jag kopierade den från webbläsaren var den skriven på en enda rad och insprängd med flera `#` och mellanslag, antagligen för att varje rad av nyckeln var utkommenterad. Jag tog en titt på hur en vanlig OpenSSH nyckel såg ut (minnet är bra men kort) och redigerade den jag hittade på servern med en enkel find & replace och en enkel regex.
+When I copied it from the browser it was written on a single line and interspersed with several `#` and spaces, presumably because each line of the key was commented out. I took a look at what a regular OpenSSH key looked like (memory is good but short) and edited the one I found on the server with a simple find & replace and a simple regex.
 
 ![Screenshot](img/Pasted%20image%2020251110164543.png)
 
-Den privata nyckeln för `Dale` är alltså:
+The private key for `Dale` is thus:
 
 ```
 -----BEGIN OPENSSH PRIVATE KEY-----
@@ -105,25 +109,25 @@ CPFMeoYeUdghftAAAAE3A0aW50LXA0cnJvdEBwYXJyb3QBAgMEBQYH
 -----END OPENSSH PRIVATE KEY-----
 ```
 
-Jag sparade den till filen `key.pem`, körde `chmod 600 key.pem`, därefter kunde jag ssh:a till servern genom `ssh -i key.pem dale@10.10.x.x` och behövde inte uppge något lösenord.
+I saved it to the file `key.pem`, ran `chmod 600 key.pem`, after which I could ssh to the server through `ssh -i key.pem dale@10.10.x.x` and didn't need to provide any password.
 
-Första flaggan skulle heta `user.txt` och gissningsvis skulle den finnas i samma folder där vi landade när vi loggade in med ssh som dale, vilket även var fallet.
+The first flag should be called `user.txt` and presumably it would be in the same folder where we landed when we logged in with ssh as dale, which was also the case.
 
 <details>
-  <summary><b>Klicka för att se första flaggan</b></summary>
+  <summary><b>Click to see the first flag</b></summary>
 
   `THM{6Y0TXHz7c2d}`
 </details>
 
 ## Privilege Escalation
 
->Efter att ha testat typ tusen olika sätt att få root-behörighet så kunde vi till slut koka ner processen till följande. Häng med!
+>After having tested like a thousand different ways to get root privileges we could finally boil down the process to the following. Follow along!
 
-Nästa flagga heter `root.txt` och finns antagligen i `/root`. Det gäller alltså att eskalera behörigheterna för att kunna komma åt den, för det får inte användaren `dale` göra.
+The next flag is called `root.txt` and is presumably in `/root`. The task is thus to escalate privileges to be able to access it, because the user `dale` is not allowed to do that.
 
-Efter att ha kört `sudo -l` som **dale** ser vi att man kan köra ett script som dale där **gyles** är owner, och scriptet ser ut så här:
+After running `sudo -l` as **dale** we see that one can run a script as dale where **gyles** is owner, and the script looks like this:
 
-```bash
+```bash 
 #!/bin/bash 
 printf "Reading stats.\n" 
 sleep 1
@@ -137,22 +141,23 @@ cp /var/stats/stats.txt /var/stats/stats-$date_save.bak
 printf "Stats have been backed up\n"
 ```
 
-Scriptet har en sårbarhet på raderna:
+The script has a vulnerability on the lines:
 
 ```bash
-read -p "Enter 'date' to timestamp the file: " error 
+read -p "Enter 'date' to timestamp the file: " error
+... 
 $error 2>/dev/null
 ```
 
-Scriptet kommer kunna köra vad man än skriver in där. Tillvägagångssättet blir alltså:
-- vid första prompten skriver man vad som helst
-- vid andra skriver man `/bin/bash` och får då ett shell som **gyles**
+The script will be able to run whatever one enters there. The approach thus becomes:
+- at the first prompt you write anything
+- at the second you write `/bin/bash` and then get a shell as **gyles**
 
-Nu har vi alltså ett shell som **gyles** och dags att leta igenom systemet noga. `ls -la /home/gyles` ger många intressanta träffar, bland annat `.bash_history`.
+Now we have a shell as **gyles** and time to search through the system. `ls -la /home/gyles` gives many interesting hits, including `.bash_history`.
 
-`/home/gyles/.bash_history` innehåller supermånga kommandon, men det intressanta är att användaren skriver till `/opt/admin_stuff/script.sh`
+`/home/gyles/.bash_history` contains a lot of commands, but the interesting thing is that the user writes to `/opt/admin_stuff/script.sh`
 
-Vid en närmare titt innehåller scriptet:
+Upon closer inspection the script contains:
 
 ```shell
 #!/bin/bash 
@@ -164,38 +169,40 @@ $main_site
 $dev_site
 ```
 
-Som kommentaren säger så körs ett cronjob som backar upp hemsidan. Om **gyles** har skrivbehörighet på något av scripten så kan jag redigera det och antingen läsa flaggan i `/root` eller spawna ett root shell.
+As the comment says, a cronjob runs that backs up the website. If **gyles** has write permission on any of the scripts then I can edit it and either read the flag in `/root` or spawn a root shell.
 
-När jag kör `id` och `groups` som **gyles** ser jag att användaren tillhör grupperna **lxd**, **editors** och **admin**.
+When I run `id` and `groups` as **gyles** I see that the user belongs to the groups **lxd**, **editors** and **admin**.
 
-Jag körde `ls -la /usr/local/sbin/dev_backup.sh` men ägaren och gruppen är **root**. Efter att ha kört samma kommando på `/usr/local/bin/main_backup.sh` så är ägaren **root**, men filen tillhör gruppen **admin**, gyles kan alltså redigera scriptet!
+I ran `ls -la /usr/local/sbin/dev_backup.sh` but the owner and group are **root**. After running the same command on `/usr/local/bin/main_backup.sh`, the owner is **root**, but the file belongs to the group **admin** - gyles can edit the script!
 
-Jag kommenterade ut raderna i scriptet och lade istället till:
+I commented out the lines in the script and instead added:
 
 ```shell
 echo "cp /bin/bash /tmp/rootbash" >> /usr/local/bin/main_backup.sh 
 echo "chmod +s /tmp/rootbash" >> /usr/local/bin/main_backup.sh
 ```
 
-När jag såg att filen **rootbash** var skapad så körde jag `/tmp/rootbash -p`, därefter `whoami` och fick följande svar:
+When I saw that the file **rootbash** was created I ran `/tmp/rootbash -p`, then `whoami` and got the following answer:
 
 ![Screenshot](img/Pasted%20image%2020251110232927.png)
 
-Därefter säkerställde jag att flaggan fanns i `/root` genom `ls -la /root`, därefter `cat /root/root.txt`. 
+After that I made sure that the flag was in `/root` through `ls -la /root`, then `cat /root/root.txt`. 
 
 <details>
-  <summary><b>Klicka för att se andra flaggan</b></summary>
+  <summary><b>Click to see the second flag</b></summary>
   
   `THM{fhqbznavfonq}`
 </details>
 
 ## Final Words
 
-Än en gång tog en "beginner friendly" challenge otroligt lång tid, men jag lärde mig många saker längs med vägen, bland annat:
-- Man kan hitta så mycket mer om man lägger till ett domännamn i `/etc/hosts` än att bara titta på IP-adressen.
-- Testa alltid om en hemsida är sårbar för File Inclustion/Path Traversal.
-- Hur man kan använda en OpenSSH Private Key för att SSH:a in utan att uppge lösenord.
-- Att ett enkelt script kan innehålla sårbarheter som kan spawna ett shell för en annan användare.
-- Hur jag kan redigera ett script som körs som cronjob och spawna ett root shell.
+Once again a "beginner friendly" challenge took an incredibly long time, but I learned many things along the way, including:
+- You can find so much more if you add a domain name in `/etc/hosts` than just looking at the IP address.
+- Always test if a website is vulnerable to File Inclusion/Path Traversal if you get the chance.
+- How one can use an OpenSSH Private Key to SSH in without providing a password.
+- That a simple script can contain vulnerabilities that can spawn a shell for another user.
+- How I can edit a script that runs as a cronjob and spawn a root shell.
 
-Thanks for reading and happy hacking!
+Thanks for reading and happy hacking! ✨
+
+> 11 November 2025. Original text and markdown formatting by me. Translation by AI.
