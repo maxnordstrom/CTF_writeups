@@ -7,6 +7,7 @@ A collection of writeups on rooms at TryHackMe. I try to clear as many rooms as 
 
 ## Table of Contents
 
+- [Challenge: Team](team) (2025-11-11)
 - [Challenge: Simple CTF](simple_ctf) (2025-10-17)
 - [Challenge: CTF Collection Vol 1](ctf_collection_vol_1) (2025-10-14)
 - [Room: Basic Pentesting](basic_pentesting) (2025-09-16)
