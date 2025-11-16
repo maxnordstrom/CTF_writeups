@@ -10,7 +10,13 @@ Scenariot var att en statstjänsteman på en skyddsvärd myndighet var väldigt 
 
 Vi inledde med att göra en översiktlig analys av nätverkstrafiken. Eftersom användaren hade varit på jakt efter kattbilder och laddat ner såna var vi extra uppmärksamma på all HTTP-trafik. I Wireshark tog vi **File > Export Objects > HTTP...** och kunde då se hela filstrukturen för hemsidan, inklusive html, css, bilder och en zip-fil.
 
-Vi öppnade html-filen i webbläsaren för att se hur det såg ut - då såg vi en text där det stod  `password is 'hunter2'`. Vi extraherade zip-filen, och som vi misstänkte så var den lösenordsskyddad. Vi uppgav `hunter2` och kunde extrahera filen. Där såg vi en rad jpg-filer och en textfil som hette *flag*. Vi öppnade den och kunde läsa första flaggan som var: `flagga1{klassiska_lösenord_för_100}`
+Vi öppnade html-filen i webbläsaren för att se hur det såg ut - då såg vi en text där det stod  `password is 'hunter2'`. Vi extraherade zip-filen, och som vi misstänkte så var den lösenordsskyddad. Vi uppgav `hunter2` och kunde extrahera filen. Där såg vi en rad jpg-filer och en textfil som hette *flag*. Vi öppnade den och kunde läsa första flaggan.
+
+<details>
+  <summary><b>Klicka för att se första flaggan</b></summary>
+
+  `flagga1{klassiska_lösenord_för_100}`
+</details> 
 
 ## Andra flaggan
 
@@ -77,7 +83,13 @@ Det slutade med att jag gav AI hela pcap-filen, förklarade scenariot, gav den s
 
 Jag såg hur AI:n arbetade flitigt och testade många av de metoder som vi själva hade provat. Till slut hittade AI rätt metod och levererade en fullt fungerande tar-fil.
 
-Jag packade upp tar-filen som mycket riktigt innehöll mapp-strukturen för användarens hem-katalog, och i `/home/user/Documents` fanns filen `topphemligt.pdf`. Den topphemliga informationen var ännu en kattbild med den andra flaggan skriven mitt i bilden. Andra flaggan var: `flagga2{...}`
+Jag packade upp tar-filen som mycket riktigt innehöll mapp-strukturen för användarens hem-katalog, och i `/home/user/Documents` fanns filen `topphemligt.pdf`. Den topphemliga informationen var ännu en kattbild med den andra flaggan skriven mitt i bilden. 
+
+<details>
+  <summary><b>Klicka för att se andra flaggan</b></summary>
+  
+  `flagga2{every_day_is_caturday}`
+</details>
 
 ## Tredje flaggan
 
@@ -91,7 +103,7 @@ Det var då **onind00** knäckte det, han hade tagit en närmare titt på pdf-fi
 
 Genom att köra `strings topphemligt.pdf | less` kunde vi se att pdf-filen innehöll något spännande som inte brukar finnas i en vanlig pdf. Det var en rad som inleddes med `javascript` följt av en lång blob som till synes såg ut som hex. Det som gjorde mig lite fundersam var dock att det i princip var samma tecken som upprepade sig gång på gång
 
-![[Pasted image 20251116143426.png]]
+![PDF](img/pdf.png)
 
 Jag decode:ade en liten snutt av hex-strängen och blev varse att det var kod skriven i **JSFuck** - en obskyr variant av JS vars syntax endast består av sex olika tecken. Det var därför det var så många upprepningar!
 
@@ -123,7 +135,11 @@ Det luriga var att allt var wrappat i ett if-statement som till synes såg ut at
 
 Jag skrev om if-statement så att det istället stod `if (true)` och ändrade `app.alert()` till `console.log()` och körde koden i konsolen i webbläsaren. Vad som hände var att flagga 3 skrevs ut som ASCII art! Så här vackert blev det:
 
-![[Pasted image 20251116145540.png]]
+<details>
+  <summary><b>Klicka för att se tredje flaggan</b></summary>
+  
+  ![Flagga 3](img/flag3.png)
+</details><br>
 
 Inte konstigt att det var svårt att hitta flagga 3 med grep...
 
