@@ -1,5 +1,7 @@
 # FRA - Kattastrofen
 
+(English version found [here](English_version).)
+
 Här är en writeup om FRA:s utmaning Kattastrofen. Jag löste den tillsammans med min vapendragare **onind00**. Utmaningen hittas på [challenge.fra.se](https://challenge.fra.se)
 
 ## Inledning
@@ -150,3 +152,5 @@ En riktigt kul utmaning från FRA som verkligen fick mig att behöva tänka till
 Jag uppskattar denna typ av utmaningar för att jag bygger på mina kunskaper i Wireshark, men även mina kunskaper att läsa och tyda kod, något jag kan ha bra nytta av i arbetslivet (och framtida CTF:er).
 
 Tack för att du läste, och happy hacking!
+
+> Skriven och publicerad av mig 2025-11-16
