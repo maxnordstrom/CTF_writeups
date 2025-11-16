@@ -4,4 +4,4 @@ A collection of writeups on challenges found at [challenge.fra.se](https://chall
 
 ## Table of Contents
 
-[Kattastrofen](kattastrofen) (2025-11-13)
+[Kattastrofen](Kattastrofen) (2025-11-13)
