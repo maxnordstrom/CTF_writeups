@@ -4,7 +4,7 @@ https://tryhackme.com/room/phishingemails5fgjlzxc
 
 ![Pasted image 20251124195438.png](img/20251124195438.png)
 
-(English writeup found [here](English_version).)
+(English writeup found [here](English_version.md).)
 
 ## Introduktion
 

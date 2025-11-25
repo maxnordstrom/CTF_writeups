@@ -1,6 +1,6 @@
 # FRA - Kattastrofen
 
-(English version found [here](English_version).)
+(English version found [here](English_version.md).)
 
 Här är en writeup om FRA:s utmaning Kattastrofen. Jag löste den tillsammans med min vapendragare **onind00**. Utmaningen hittas på [challenge.fra.se](https://challenge.fra.se)
 
