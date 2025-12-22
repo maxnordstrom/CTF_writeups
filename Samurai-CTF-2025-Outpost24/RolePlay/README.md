@@ -1,6 +1,6 @@
 # RolePlay (Web)
 
-![[Pasted image 20251215232818.png]]
+![Screenshot](img/Pasted%20image%2020251215232818.png)
 
 ## Beskrivning
 
@@ -10,11 +10,11 @@ Som man kan läsa av utmaningens rubrik och beskrivning så verkar den handla om
 
 I beskrivningen fick man en länk som ledde till en hemsida där man kunde logga in eller skapa ett konto.
 
-![[Pasted image 20251215153250.png]]
+![Screenshot](img/Pasted%20image%2020251215153250.png)
 
 Jag skapade ett konto och loggade in. Jag möttes av följande meddelande:
 
-![[Pasted image 20251215153422.png]]
+![Screenshot](img/Pasted%20image%2020251215153422.png)
 
 Jag förstod alltså att jag antagligen hade blivit tilldelad en roll och att jag på något sätt behövde göra mig till **admin** för att hitta flaggan. Jag gjorde lite grundläggande research:
 
@@ -24,17 +24,17 @@ Jag förstod alltså att jag antagligen hade blivit tilldelad en roll och att ja
 	- Bootstrap laddas in - inte relevant.
 	- Något som kallades `<anonymous code>` som jag inte riktigt vet vad det är
 
-	  ![[Pasted image 20251215153832.png]]
+	  ![Screenshot](img/Pasted%20image%2020251215153832.png)
 	  
 - Inga ytterligare JS-filer laddades in.
 - Kollade cookies
 	- Här fanns en cookie med namnet `JWT_COOKIE`
 
-	  ![[Pasted image 20251215153957.png]]
+	  ![Screenshot](img/Pasted%20image%2020251215153957.png)
 
 För att se vad min JWT hade för egenskaper decode:ade jag den på **jwt.io**
 
-![[Pasted image 20251215154130.png]]
+![Screenshot](img/Pasted%20image%2020251215154130.png)
 
 Det jag kunde konstatera var att den använder sig av algorithmen **ES256** (Elliptic Curve), och att min användare hade rollen **user**. Jag antog att det är den rollen jag vill få till **admin**.
 
@@ -46,7 +46,7 @@ Genom att fånga mitt GET request i Burp kunde jag se min JWT, justera dess vär
 
 Jag testade det mest grundläggande hacket - att ändra **alg** till **none**. Dock fick jag samma svar som när jag först loggade in.
 
-![[Pasted image 20251215154615.png]]
+![Screenshot](img/Pasted%20image%2020251215154615.png)
 
 Jag testade även att helt sonika ändra role från user till admin, men det genererade samma respons.
 
@@ -60,7 +60,7 @@ Steg 1 för att detta ska funka är att hitta den publika nyckeln. Den kan finna
 
 Där hittade jag vad jag antog var den publika nyckeln för **RS256**, jag var dock aldrig helt säker på att så var fallet. Aja, man får testa, here goes nothing!
 
-![[Pasted image 20251215191137.png]]
+![Screenshot](img/Pasted%20image%2020251215191137.png)
 
 Längst ner på bilden står ju de keywords jag vill ha - både *public key*, *Elliptic Curve* och *256*.
 
@@ -68,7 +68,7 @@ Verktyget jag ville använda var [jwt_tool](https://github.com/ticarpi/jwt_tool)
 
 Genom att använda **openssl** kunde jag ladda ner den publika nyckeln och spara till fil: `openssl s_client -connect roleplay.appsec.nu:443 -showcerts 2>/dev/null | openssl x509 -pubkey -noout > public_key.pem`. Därefter kunde jag kontrollera nyckeln genom `openssl pkey -in public_key.pem -pubin -text` och då jämföra med vad jag såg i informationen om SSL-certifikatet.
 
-![[Pasted image 20251215192823.png]]
+![Screenshot](img/Pasted%20image%2020251215192823.png)
 
 Därefter använde jag **jwt_tool** för att skapa mig en ny JWT med alg satt till **HS256**, role till **admin** och den publika nyckeln som **secret**. När det var klart skickade jag med min nya JWT i requesten via Burp. Om det funkade? Inte alls :D
 
@@ -80,7 +80,7 @@ Back to basics. **Onind00** läste instruktionen igen. Noga. Han fick oss andra 
 
 **Onind00** kollade source på siten igen. Lade märke till en avslöjande kommentar längst ner på sidan:
 
-![[Pasted image 20251215193436.png]]
+![Screenshot](img/Pasted%20image%2020251215193436.png)
 
 En googling senare på OpenJDK 17 och JWT gav oss the holy grail. Det visade sig att det finns en CVE som kallas för **Psychic Signatures**. Oj oj. Här hade vi testat manuella grejer, och så fanns det en CVE hela tiden?? [CVE-2022-21449](https://nvd.nist.gov/vuln/detail/cve-2022-21449)
 
@@ -88,15 +88,15 @@ En googling senare på OpenJDK 17 och JWT gav oss the holy grail. Det visade sig
 
 Vi började genast läsa på olika håll. På Nist stod inte namnet Psychic Signatures uttryckligen, men jag hittade [ett blogginlägg](https://www.securecodewarrior.com/article/psychic-signatures) som tog upp just detta. Jag läste inlägget och fastnade för exploit-delen:
 
-![[Pasted image 20251215194113.png]]
+![Screenshot](img/Pasted%20image%2020251215194113.png)
 
 Jag hoppade över till Burp och redigerade min JWT med **role admin**, suddade ut signaturen och lade till `MAYCAQACAQA` istället och skickade iväg. Funkade det? Ja :D
 
-![[Pasted image 20251215194301.png]]
+![Screenshot](img/Pasted%20image%2020251215194301.png)
 
 Stack över till CTF-portalen och submittade flaggan. Error. Va? Det kan inte vara sant. Tryckte på **Render** i Burp istället och såg att den råa responsen innehöll lite skräptecken - här är den riktiga flaggan:
 
-![[Pasted image 20251215194447.png]]
+![Screenshot](img/Pasted%20image%2020251215194447.png)
 
 ## Slutord
 
