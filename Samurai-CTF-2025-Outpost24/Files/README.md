@@ -1,6 +1,6 @@
 # WARMUP: /files (Misc)
 
-![[Pasted image 20251215232724.png]]
+![Screenshot](img/Pasted%20image%2020251215232724.png)
 
 En uppvärmnings-utmaning i kategorin Misc som lämnar mycket åt fantasin - det finns ingen beskrivning. Det man har att gå på är titeln, en bild på Inspector Gadget och tema-låten till densamme.
 
@@ -12,7 +12,7 @@ Eftersom utmaningen hette **/files** tänkte jag att det kanske fanns en katalog
 
 Jag kollade därför i inspector för att se var ifrån bilden hämtades.
 
-![[Pasted image 20251215231931.png]]
+![Screenshot](img/Pasted%20image%2020251215231931.png)
 
 I efterhand så kan jag ju se att jag hade haft första halvan av flaggan redan där, men min syn var helt inställd på att leta efter **/files**, och det hittade jag ju där!
 
@@ -26,6 +26,6 @@ Jag wrappade båda halvorna i CTF:ens flaggformat och lämnade in. Det var rätt
 
 <details>
   <summary><b>Klicka för att se flaggan</b></summary>
-  
+
   `O24{Th1nk1ng_Out51d3_Th3_Ch4ll3ng3_B0x}`
 </details> 
