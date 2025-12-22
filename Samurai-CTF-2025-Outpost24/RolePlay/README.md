@@ -42,7 +42,7 @@ Det jag kunde konstatera var att den använder sig av algorithmen **ES256** (Ell
 
 Genom att fånga mitt GET request i Burp kunde jag se min JWT, justera dess värde på **jwt.io** och sedan skicka ett nytt request med min nya payload med Burp Repeater. 
 
-#### Alg none
+### Alg none
 
 Jag testade det mest grundläggande hacket - att ändra **alg** till **none**. Dock fick jag samma svar som när jag först loggade in.
 
@@ -50,7 +50,7 @@ Jag testade det mest grundläggande hacket - att ändra **alg** till **none**. D
 
 Jag testade även att helt sonika ändra role från user till admin, men det genererade samma respons.
 
-#### Algorithm Confusion Attack
+### Algorithm Confusion Attack
 
 Jag läste mig till att man kan prova att utföra en [Algorithm Confusion Attack](https://portswigger.net/web-security/jwt/algorithm-confusion). Lite samma som när jag satte `alg` till `none`, men istället för att byta till `none` så sätter man en annan algorithm som ger en signatur på slutet. Till artikeln jag länkar till ovan nämns hur man kan byta från **RS256**, som använder en privat och en publik nyckel, till **HS256** som är en symmetrisk algorithm och därför endast använder *en* nyckel. Alltså samma för att kryptera och dekryptera.
 
@@ -73,7 +73,9 @@ Genom att använda **openssl** kunde jag ladda ner den publika nyckeln och spara
 Därefter använde jag **jwt_tool** för att skapa mig en ny JWT med alg satt till **HS256**, role till **admin** och den publika nyckeln som **secret**. När det var klart skickade jag med min nya JWT i requesten via Burp. Om det funkade? Inte alls :D
 
 Jag testade massor av roller, även om jag innerst inne var övertygad om att det skulle vara just role admin...
+
 ## Genombrottet
+
 Man skulle kunna tro att det här var första försöket, men icke. Jag hade gjort precis samma steg som ovan någon kväll tidigare, och den här gången tillsammans med mina lagkamrater. Ett misslyckande kan ju vara handhavarfel. Två misslyckanden? Då är det nog inte rätt väg...
 
 Back to basics. **Onind00** läste instruktionen igen. Noga. Han fick oss andra att läsa den igen, ännu mer noga. Vi lade märke till att det stod nåt om *psychic abilities*. Kanske man skulle byta roll till nåt mer andligt?
