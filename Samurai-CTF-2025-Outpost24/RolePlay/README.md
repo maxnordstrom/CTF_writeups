@@ -94,11 +94,19 @@ Vi började genast läsa på olika håll. På Nist stod inte namnet Psychic Sign
 
 Jag hoppade över till Burp och redigerade min JWT med **role admin**, suddade ut signaturen och lade till `MAYCAQACAQA` istället och skickade iväg. Funkade det? Ja :D
 
-![Screenshot](img/Pasted%20image%2020251215194301.png)
+<details>
+  <summary><b>Klicka för att se bilden</b></summary>
 
-Stack över till CTF-portalen och submittade flaggan. Error. Va? Det kan inte vara sant. Tryckte på **Render** i Burp istället och såg att den råa responsen innehöll lite skräptecken - här är den riktiga flaggan:
+  ![Screenshot](img/Pasted%20image%2020251215194301.png)
+</details><br>
 
-![Screenshot](img/Pasted%20image%2020251215194447.png)
+Stack över till CTF-portalen och submittade flaggan. Error. Va? Det kan inte vara sant. Tryckte på **Render** i Burp istället och såg att den råa responsen innehöll lite skräptecken - här är den riktiga flaggan:<br>
+
+<details>
+  <summary><b>Klicka för att se flaggan</b></summary>
+
+  ![Screenshot](img/Pasted%20image%2020251215194447.png)
+</details> 
 
 ## Slutord
 
