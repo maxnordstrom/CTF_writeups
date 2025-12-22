@@ -20,7 +20,7 @@ Jag öppnade länken i en ny tab som dels laddade ner bilden och visade den, doc
 
 Jag försökte navigera till `https://ctf.samurai.nu/files/` men det resulterade i 404.
 
-Sen tittade jag på länken och, aha, jag ser något som skulle kunna vara en flagga! Jag sparade strängen `Th1nk1ng_Out51`, gick tillbaka till uppgiften och gjorde samma sak med ljudfilen, som av en händelse fanns på `/files/d3_Th3_Ch4ll3ng3_B0x/Inspector_Gadget_Theme.mp3`. Där var andra halvan. 
+Sen tittade jag på länken och, aha, jag såg något som skulle kunna vara en flagga! Jag sparade strängen `Th1nk1ng_Out51`, gick tillbaka till uppgiften och gjorde samma sak med ljudfilen, som av en händelse fanns på `/files/d3_Th3_Ch4ll3ng3_B0x/Inspector_Gadget_Theme.mp3`. Där var andra halvan. 
 
 Jag wrappade båda halvorna i CTF:ens flaggformat och lämnade in. Det var rätt!
 
