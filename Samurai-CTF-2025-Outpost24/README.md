@@ -8,4 +8,4 @@ Yggdrasil Root Access fought well and finished in the top 10. Big thanks to my t
 Here is a collection of writeups on some of my solves.
 
 - [RolePlay (Web)](RolePlay)
-- /Files (Misc)
+- [/Files (Misc)](Files)
