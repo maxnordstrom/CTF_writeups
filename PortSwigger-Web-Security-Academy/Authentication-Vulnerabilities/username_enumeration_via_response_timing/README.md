@@ -38,13 +38,15 @@ Nu tittade jag lite närmare på responsen och lade märke till den här lilla s
 
 Känns som att det går utanför labbens tema något, men jag behöver nog hitta ett sätt att undgå rate limit. Kanske är det det som står under hinten? :D Jag har inte kollat, men ska göra ett försök först.
 
-Jag lade in headern `X-Forwarded-For:` och ställde in en Pitchfork attack för att kringgå rate limit. Payload 1 genererade en siffra mellan 0 och 255 (för att simulera en giltig IP-adress), medan Payload 2 gick igenom användarnamnen.
+Jag lade in headern `X-Forwarded-For:` (från grundkursen Bypass Rate Limit 101, haha) och ställde in en Pitchfork attack för att kringgå rate limit. Payload 1 genererade en siffra mellan 0 och 255 (för att simulera en giltig IP-adress), medan Payload 2 gick igenom användarnamnen.
 
 ![Screenshot](img/Pasted%20image%2020260311162723.png)
 
-Jag misstänker att jag hittade rätt användarnamn...
+Jag misstänker att jag hittade rätt användarnamn ;)
 
 ![Screenshot](img/Pasted%20image%2020260311162816.png)
+
+I och med att svartiden är såpass mycket längre kan man misstänka att det är det enda användarnamnet servern testade lösenordet mot.
 
 Dags att köra brute force på användarnamnet `ftp`. Och jag behåller min X-Forwarded-For header.
 
@@ -52,7 +54,7 @@ Det blev en Redirect 302 med lösenordet `harley`
 
 ![Screenshot](img/Pasted%20image%2020260311163135.png)
 
-Och jag lyckades logga in!
+Och jag lyckades logga in med `ftp:harley`
 
 ![Screenshot](img/Pasted%20image%2020260311163214.png)
 
