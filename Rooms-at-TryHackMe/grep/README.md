@@ -258,7 +258,7 @@ Men i `/etc/hosts` hittade jag rätt namn
   <summary><b>Klicka här för att ta en titt</b></summary>
 
   ![Screenshot](img/Pasted%20image%2020260328193706.png)
-</details><br>
+</details>
 
 Äntligen en seger!
 
@@ -292,7 +292,7 @@ In med admins mailadress där och...
   <summary><b>Klicka här för att se sista flaggan</b></summary>
 
   ![Screenshot](img/Pasted%20image%2020260328202409.png)
-</details><br>
+</details>
 
 Wow...
 
