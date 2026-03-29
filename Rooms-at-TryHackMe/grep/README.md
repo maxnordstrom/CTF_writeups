@@ -141,7 +141,7 @@ Scriptet dumpade följande:
   <summary><b>Klicka här för att titta</b></summary>
 
   ![Screenshot](img/Pasted%20image%2020260328164554.png)
-</details><br>
+</details>
 
 Som innehöll svaret på fråga tre. Three down, two to go!
 
@@ -299,5 +299,7 @@ Wow...
 ## Fågeln
 
 Det var Tobzon som jag hade samarbetat med tidigare under dagen. Han och Onind00 hade fortsatt medan jag hade annat för mig. Under en diskussion hade Onind berättat att han och jag fått träff på 3 portar tidigare, men Tobzon hade fått träff på 4...
+
+Om jag hade känt till den fjärde porten hade det varit en walk in the park - jag hade kunnat skippa att dumpa databaser, försöka knäcka lösenord och poppa web och rev shells. Men men :D
 
 Vad har jag lärt mig av detta? Att alltid, *alltid*, **ALLTID**, scanna alla portar med `-p-` vid första scanningen :D Sen kan man gå på djupet, göra mer noggranna scanningar. Men först, bara dra av en scan över hela gänget. Glöm inte det.
