@@ -7,6 +7,7 @@ A collection of writeups on rooms at TryHackMe. I try to clear as many rooms as 
 
 ## Table of Contents
 
+- [Challenge: Grep](grep) (2026-03-28)
 - [Challenge: Order](order) (2026-02-27)
 - [Challenge: Mr. Phisher](mr_phisher) (2026-02-26)
 - [Challenge: Confidential](confidential) (2026-02-26)
