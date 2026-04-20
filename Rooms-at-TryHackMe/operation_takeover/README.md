@@ -1,8 +1,8 @@
-![[Pasted image 20260410103247.png]]
+![Screenshot](img/Pasted%20image%2020260410103247.png)
 
 https://tryhackme.com/room/operationtakeover
 
-![[Pasted image 20260410103308.png]]
+![Screenshot](img/Pasted%20image%2020260410103308.png)
 
 Spännande med ett rum utan instruktioner! Får se vad vi ställs inför.
 
@@ -12,11 +12,11 @@ Vänder mig till nmap direkt för att se vad vi har att jobba med. Den här gån
 
 Hittar tre öppna portar:
 
-![[Pasted image 20260410105542.png]]
+![Screenshot](img/Pasted%20image%2020260410105542.png)
 
 Kör en mer noggrann scanning på de tre portarna för att få fram vad som körs genom `nmap -sC -sV -p22,179,2623 $IP -v` och fick följande:
 
-![[Pasted image 20260410111256.png]]
+![Screenshot](img/Pasted%20image%2020260410111256.png)
 
 Rummet handar ju om att hacka en router, så FRRouting på port 2623 är ju högst intressant. Jag blir även nyfiken på vad som gömmer sig bakom port 179 som endast returnerar `tcpwrapped`.
 
@@ -24,13 +24,13 @@ Rummet handar ju om att hacka en router, så FRRouting på port 2623 är ju hög
 
 Gjorde en snabb googling om det finns några CVE för FRRouting version 10, och det verkar så
 
-![[Pasted image 20260410105848.png]]
+![Screenshot](img/Pasted%20image%2020260410105848.png)
 
 Hittar ett par olika, de verkar dock alla handla om DoS, och vi vill ju ha access, inte sänka den...
 
 Om jag testar att ansluta till routern med netcat så får jag en password promt - vi kan alltså ansluta till den. Sannolikheten att ett standardlösenord används? Vet ej. Vi får väl prova.
 
-![[Pasted image 20260410111751.png]]
+![Screenshot](img/Pasted%20image%2020260410111751.png)
 
 En googling säger att FRRouting inte har något standardlösenord. Trist. Dra igång Hydra som tuggar på i bakgrunden? Ja, let's go. Rockyou får det bli.
 
@@ -88,7 +88,7 @@ Verkar dock klurigt att lista ut vilka IP:n som skulle finnas i den listan, så 
 
 Det har publicerats en ny CVE nyligen (mars 2026) som faktiskt handlar om access control.
 
-![[Pasted image 20260410120128.png]]
+![Screenshot](img/Pasted%20image%2020260410120128.png)
 
 Jag gillar dock inte formuleringarna "The attack is considered to have high complexity" och "The exploitability is reported as difficult" :D
 
@@ -102,7 +102,7 @@ Men eftersom vi är nyfikna på just SNMP på port 161 så kan jag använda prog
 
 Detta programmet kör jag med en wordlist från seclists för att fuzza olika namn och fick följande träff:
 
-![[Pasted image 20260410121355.png]]
+![Screenshot](img/Pasted%20image%2020260410121355.png)
 
 Därefter använder jag `snmpwalk` för att ta reda på mer info om routern. Kanske att den läcker lite götta.
 
@@ -110,21 +110,21 @@ Därefter använder jag `snmpwalk` för att ta reda på mer info om routern. Kan
 
 Det visade sig att vi med hjälp av snmp kan köra kommandon på servern. Onind00 tog fram ett proof of concept genom att skriva en fil till servern och sedan läsa den:
 
-![[Pasted image 20260410123618.png]]
+![Screenshot](img/Pasted%20image%2020260410123618.png)
 
 Därefter kunde vi skriva kommandon till servern med `snmpset` som vi sedan körde med `snmpwalk`
 
-![[Pasted image 20260410125107.png]]
+![Screenshot](img/Pasted%20image%2020260410125107.png)
 
-![[Pasted image 20260410125131.png]]
+![Screenshot](img/Pasted%20image%2020260410125131.png)
 
 Den sista filen där ser ju lovande ut :)
 
-![[Pasted image 20260410125158.png]]
+![Screenshot](img/Pasted%20image%2020260410125158.png)
 
 Vi fick flaggan!
 
-![[Pasted image 20260410125214.png]]
+![Screenshot](img/Pasted%20image%2020260410125214.png)
 
 ## Slutord
 
