@@ -7,6 +7,7 @@ A collection of writeups on rooms at TryHackMe. I try to clear as many rooms as 
 
 ## Table of Contents
 
+- [Challenge: Injecticts](injectics) (2026-04-26)
 - [Challenge: Operation Takeover](operation_takeover) (2026-04-10)
 - [Challenge: Have a Break](have_a_break) (2026-04-06)
 - [Challenge: Grep](grep) (2026-03-28)
