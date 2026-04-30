@@ -23,7 +23,7 @@ Programmet hittade lösenordet direkt och skrev ut det i terminalen.
   <summary><b>Klicka här för att se lösenordet</b></summary>
 
   `naughtylist`
-</details><br>
+</details>
 
 Eftersom jag använde ssh för att komma åt servern kunde jag inte öppna pdf-filen på vanligt vis, utan fick konvertera den till text med programmet **pdftotext**. Detta genom kommandot `pdftotext -opw secretPassword flag.pdf` vilket istället gav mig filen **flag.txt**. `cat flag.txt` gav mig flaggan!
 
@@ -40,7 +40,7 @@ Zip-filen hette **flag.zip** och jag använde John the Ripper för att knäcka l
   <summary><b>Klicka här för att se lösenordet</b></summary>
 
   `winter4ever`
-</details><br>
+</details>
 
 Jag provade att unzippa med **unzip** och **gzip**, menjag hittade inga alternativ för att lägga till ett lösenord. Det gick däremot med **7-Zip**. Detta genom kommandot `7z e flag.zip`. Jag fick därefter en prompt om hur jag ville spara den extraherade filen - jag valde att den inte skulle skriva över filen **flag.txt** som redan fanns i katalogen, utan istället ge den ett nytt namn. Därefter fick jag en prompt om att uppge lösenordet. När det var gjort hade jag filen **flag_1.txt** som innehöll flaggan.
 
@@ -77,7 +77,7 @@ Nu så, äntligen dags att jaga rätt på nyckeln till Sidequest 2!
   <summary><b>Klicka här för att se lösenordet</b></summary>
 
   ![Screenshot](img/Pasted%20image%2020251210172523.png)
-</details><br>
+</details>
 
 - John visade sig från sin bästa sida igen! Jag blev dock lite fundersam till en början, för vad skulle jag med *ett enda* lösenord? Men det tog mig inte lång stund innan jag förstod att jag skulle använda det för att öppna själva databasen.
 - En snabb sökning och jag fick veta att man kan öppna KeePass-filer med **keepassxc**, som av en händelse fanns på maskinen.
