@@ -19,6 +19,7 @@ A collection of writeups on rooms at TryHackMe. I try to clear as many rooms as 
 - [Challenge: Confidential](confidential) (2026-02-26)
 - [Challenge: Wgel CTF](wgel_ctf) (2026-02-24)
 - [Challenge: Year of the Rabbit](year_of_the_rabbit) (2026-02-04)
+- [Room/Challenge: AoC Day 9, A Cracking Christmas](aoc_day9_a_cracking_christmas) (2025-12-09)
 - [Challenge: The Greenholt Phish](the_greenholt_phish) (2025-11-25)
 - [Challenge: Team](team) (2025-11-11)
 - [Challenge: Simple CTF](simple_ctf) (2025-10-17)
