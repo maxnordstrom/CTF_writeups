@@ -7,6 +7,7 @@ A collection of writeups on rooms at TryHackMe. I try to clear as many rooms as 
 
 ## Table of Contents
 
+- [Challenge: What's Your Name?](whats_your_name) (2026-05-03)
 - [Challenge: Jurassic Park](jurassic_park) (2026-04-27)
 - [Challenge: Dev Diaries](dev_diaries) (2026-04-27)
 - [Challenge: Fowsniff CTF](fowsniff_ctf) (2026-04-27)
