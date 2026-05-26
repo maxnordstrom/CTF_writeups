@@ -7,6 +7,7 @@ A collection of writeups on rooms at TryHackMe. I try to clear as many rooms as 
 
 ## Table of Contents
 
+- [Challenge: Operation Promotion](operation_promotion) (2026-05-26)
 - [Challenge: Checkmate](checkmate) (2026-05-19)
 - [Challenge: Include](include) (2026-05-06)
 - [Challenge: What's Your Name?](whats_your_name) (2026-05-03)
