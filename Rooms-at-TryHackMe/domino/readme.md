@@ -6,9 +6,9 @@ https://tryhackme.com/room/domino
 ## Introduction
 
 > The NexusCorp Employee Portal appears to be a typical internal application with authentication controls and role-based access in place. However, multiple small weaknesses, ranging from misconfigurations to logic flaws, can be combined to fully compromise the system.
-
+>
 > As an attacker, your objective is to observe how the application behaves, interact with its endpoints, and identify weak trust boundaries. By analysing requests, modifying parameters, and chaining vulnerabilities together, you can progressively escalate your access and move deeper into the system.
-
+>
 > _A single misstep can trigger a chain reaction, exploit each weakness in sequence and watch the system fall, one domino at a time._
 
 ![Screenshot](img/Pasted%20image%2020260601122804.png)
