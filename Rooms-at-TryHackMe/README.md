@@ -7,6 +7,9 @@ A collection of writeups on rooms at TryHackMe. I try to clear as many rooms as 
 
 ## Table of Contents
 
+- [Silent Monitor](silent_monitor) (2026-06-09)
+- [Stolen Mount](stolen_mount) (2026-06-08)
+- [Cache Me Outside](cache_me_outside) (2026-06-08)
 - [Domino](domino) (2026-06-03)
 - [Operation Coldstart](operation_coldstart) (2026-06-01)
 - [Operation Promotion](operation_promotion) (2026-05-26)
