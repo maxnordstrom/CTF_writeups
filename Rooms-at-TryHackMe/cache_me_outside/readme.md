@@ -8,14 +8,14 @@ https://tryhackme.com/room/cachemeoutside
 ## Intro
 
 > Years after walking away from the scene, a retired hacker has left pieces of his identity scattered across the open internet.
-
+>
 > At first glance, it looks like nothing more than a leaked conversation screenshot. But buried in that image is the first thread of a much larger trail. Public profiles, forgotten details, and small mistakes begin to connect into something more deliberate.
-
+>
 > Someone wanted this person found.
 ## Uppgift
 
 > You are an OSINT investigator tasked with identifying the retired hacker and tracing the clues he left behind.
-
+>
 > Start with the conversation screenshot, follow his online presence, connect the exposed details, and use the final evidence to determine where the trail ends.
 ## Flagga 1 (Full Name)
 
