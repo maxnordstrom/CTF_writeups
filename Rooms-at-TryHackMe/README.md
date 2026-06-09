@@ -7,6 +7,7 @@ A collection of writeups on rooms at TryHackMe. I try to clear as many rooms as 
 
 ## Table of Contents
 
+- [Domino](domino) (2026-06-03)
 - [Operation Coldstart](operation_coldstart) (2026-06-01)
 - [Operation Promotion](operation_promotion) (2026-05-26)
 - [Checkmate](checkmate) (2026-05-19)
