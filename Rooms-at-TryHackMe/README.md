@@ -7,6 +7,8 @@ A collection of writeups on rooms at TryHackMe. I try to clear as many rooms as 
 
 ## Table of Contents
 
+- [Packed Light](packed_light) (2026-08-11)
+- [Room 404](room_404) (2026-08-10)
 - [Silent Monitor](silent_monitor) (2026-06-09)
 - [Stolen Mount](stolen_mount) (2026-06-08)
 - [Cache Me Outside](cache_me_outside) (2026-06-08)
