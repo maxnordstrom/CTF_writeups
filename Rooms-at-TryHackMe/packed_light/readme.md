@@ -1,3 +1,5 @@
+# Packed Light
+
 ![Screenshot](img/Pasted%20image%2020260811114744.png)
 
 https://tryhackme.com/room/hh-packedlight-02e5330c
