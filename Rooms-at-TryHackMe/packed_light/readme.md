@@ -43,7 +43,7 @@ Ett litet script gav mig denna bytearray
 
 ![Screenshot](img/Pasted%20image%2020260811170452.png)
 
-Resten löste jag i CyberChef. Först From Hex, sedan XOR med nyckeln. Dock blev resultatet inte vad jag förväntat mig...
+Resten löste jag i CyberChef. Först från Hex, sedan XOR med nyckeln. Dock blev resultatet inte vad jag förväntat mig...
 
 ![Screenshot](img/Pasted%20image%2020260811171546.png)
 
