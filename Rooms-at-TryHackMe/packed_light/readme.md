@@ -51,6 +51,11 @@ Lösningen?
 
 Eftersom XOR-operationen kör *varje gång* för *varje tangent* så hinner inte hela nyckeln användas utan endast det första tecknet, alltså `H`. Ändra nyckeln i XOR?
 
-![Screenshot](img/Pasted%20image%2020260811171709.png)
 
 Voilà, nu fick jag flaggan :)
+
+<details>
+  <summary><b>Klicka här för att se den</b></summary>
+
+  ![Screenshot](img/Pasted%20image%2020260811171709.png)
+</details>
