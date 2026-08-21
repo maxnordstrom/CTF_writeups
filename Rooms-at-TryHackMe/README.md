@@ -7,6 +7,7 @@ A collection of writeups on rooms at TryHackMe. I try to clear as many rooms as 
 
 ## Table of Contents
 
+- [Beach Bar](beach_bar) (2026-08-21)
 - [Packed Light](packed_light) (2026-08-11)
 - [Room 404](room_404) (2026-08-10)
 - [Silent Monitor](silent_monitor) (2026-06-09)
