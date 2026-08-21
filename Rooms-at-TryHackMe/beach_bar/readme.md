@@ -92,7 +92,4 @@ Svaret är ja :D
    ![Screenshot](img/Pasted%20image%2020260821123708.png)
 </details>
 
-
-
-
-
+Happy Hacking!
