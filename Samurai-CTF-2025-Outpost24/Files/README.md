@@ -1,3 +1,5 @@
+> *Want an English version? Check it out [here](readme_english.md).*
+
 # WARMUP: /files (Misc)
 
 ![Screenshot](img/Pasted%20image%2020251215232724.png)

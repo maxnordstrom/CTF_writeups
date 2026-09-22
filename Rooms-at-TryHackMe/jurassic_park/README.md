@@ -1,3 +1,5 @@
+> *Want an English version? Check it out [here](readme_english.md).*
+
 # Jurassic Park
 
 ![Screenshot](img/Pasted%20image%2020260427112917.png)

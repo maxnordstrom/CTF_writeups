@@ -1,3 +1,5 @@
+> *Want an English version? Check it out [here](readme_english.md).*
+
 ![Screenshot](img/Pasted%20image%2020260504162615.png)
 
 https://tryhackme.com/room/include

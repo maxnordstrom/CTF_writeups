@@ -1,3 +1,5 @@
+> *Want an English version? Check it out [here](readme_english.md).*
+
 ![Screenshot](img/Pasted%20image%2020260130201133.png)
 
 Min tanke är att skicka POST-requesten när jag laddar upp shell.php till Repeater så att jag kan modifiera filnamnet och testa mig fram.

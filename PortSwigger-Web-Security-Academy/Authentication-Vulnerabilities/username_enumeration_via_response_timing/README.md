@@ -1,3 +1,5 @@
+> *Want an English version? Check it out [here](readme_english.md).*
+
 # Username enumeration via response timing
 
 ![Screenshot](img/Pasted%20image%2020260219141542.png)
