@@ -1,10 +1,10 @@
+> *This translation has been made by Claude, check out the original writeup [here](README.md).*
+
 # The Greenholt Phish
 
 https://tryhackme.com/room/phishingemails5fgjlzxc
 
 ![Pasted image 20251124195438.png](img/20251124195438.png)
-
-(English writeup found [here](English_version).)
 
 ## Introduction
 
@@ -29,7 +29,6 @@ What is his email address? `info[@]mutawamarine[.]com`
 What email address will receive a reply to this email? `info[.]mutawamarine[@]mail[.]com`
 
 ## Question 5
-
 What is the Originating IP? Time to check headers.
 
 ![Pasted image 20251124233426.png](img/20251124233426.png)
@@ -47,6 +46,7 @@ I looked it up on IPinfo
 The answer is `Hostwinds LLC`
 
 ## Question 7
+
 What is the SPF record for the Return-Path domain?
 
 I looked this up on [dmarcian.com](img/https://dmarcian.com)
@@ -71,7 +71,7 @@ What is the name of the attachment?
 
 ![Pasted image 20251124235321.png](img/20251124235321.png)
 
-The answer is `SWT_#09674321_PDF.CAB`
+The answer is `SWT_#09674321___PDF__.CAB`
 
 ## Question 10
 
@@ -101,4 +101,4 @@ When I had downloaded it, it looked like a zip file. **Talos File Reputation** r
 
 A nice challenge that made me more comfortable searching for information among email headers and also using some online tools to check up on a suspected file. Not nearly as challenging as the red rooms I've previously completed, but I look forward to encountering more blue challenges in the future! I suspect it can get much trickier.
 
-> 25 November 2025. Original text and markdown formatting by me. Translation by AI.
+> Written and published by me on 2025-11-25
