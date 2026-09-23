@@ -1,3 +1,5 @@
+> *Want an English version? Check it out [here](readme_english.md).*
+
 # Stolen Mount
 
 *2026-06-08*

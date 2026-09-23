@@ -1,3 +1,5 @@
+> *Want an English version? Check it out [here](readme_english.md).*
+
 # Lab: Broken brute-force protection, IP block
 
 ![Screenshot](img/Pasted%20image%2020260318092805.png)

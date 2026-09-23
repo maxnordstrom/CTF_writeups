@@ -1,3 +1,5 @@
+> *Want an English version? Check it out [here](readme_english.md).*
+
 # Beach Bar
 
 ![Screenshot](img/Pasted%20image%2020260821105306.png)

@@ -1,3 +1,5 @@
+> *Want an English version? Check it out [here](readme_english.md).*
+
 # --- WORK IN PROGRESS ---
 
 # Grannupplysningen

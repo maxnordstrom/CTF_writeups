@@ -1,10 +1,10 @@
+> *Want an English version? Check it out [here](readme_english.md).*
+
 # The Greenholt Phish
 
 https://tryhackme.com/room/phishingemails5fgjlzxc
 
 ![Pasted image 20251124195438.png](img/20251124195438.png)
-
-(English writeup found [here](English_version.md).)
 
 ## Introduktion
 

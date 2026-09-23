@@ -1,3 +1,5 @@
+> *Want an English version? Check it out [here](readme_english.md).*
+
 # RolePlay (Web)
 
 ![Screenshot](img/Pasted%20image%2020251215232818.png)

@@ -1,3 +1,5 @@
+> *Want an English version? Check it out [here](readme_english.md).*
+
 # Mr. Phisher
 
 https://tryhackme.com/room/mrphisher

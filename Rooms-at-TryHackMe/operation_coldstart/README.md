@@ -1,3 +1,5 @@
+> *Want an English version? Check it out [here](readme_english.md).*
+
 # Operation Coldstart
 
 ![Screenshot](img/Pasted%20image%2020260527120500.png)

@@ -1,3 +1,5 @@
+> *Want an English version? Check it out [here](readme_english.md).*
+
 # Passwords - A Cracking Christmas
 ### Advent of Cyber 2025, Day 9
 
