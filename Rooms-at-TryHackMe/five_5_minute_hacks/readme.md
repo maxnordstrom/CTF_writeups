@@ -111,7 +111,7 @@ Reading Ghidra's C-like pseudocode isn't my best game, so Claude helped me on th
 
 Line 9 tells us the password must start with `DoYouEven`, and `%s` stores whatever comes after it in `local_28`. On line 15 `local_28` is compared with `_init` and the check only passes if they match. So the password is... Well, I won't spell it out for you :D
 
-![Screenshot](img/Screenshot%20from%202026-10-04%2019-57-322.png)
+![Screenshot](img/Pasted%20image%2020261004.png)
 
 ## The Game
 
